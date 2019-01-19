@@ -1,6 +1,6 @@
 import User from './../models/user.model'
 import _ from 'lodash'
-import errorHandler from './error.controller'
+import errorHandler from './../helpers/dbErrorHandler'
 
 // Create new user
 const create = (req, res, next) => {
@@ -31,7 +31,7 @@ const list = (req, res) => {
 
 // Query the database by _id
 // next func pass re.profile to next functions
-const userById = (req, res, next, id) => {
+const userByID = (req, res, next, id) => {
     User.findById(id).exec((err, user) => {
         if (err || !user) {
             return res.status(404).json({
@@ -51,7 +51,7 @@ const read = (req, res) => {
 }
 
 // Update specific user
-const update = (req, res) => {
+const update = (req, res, next) => {
     let user = req.profile
     user = _.extend(user, req.body)
     user.updated = Date.now()
@@ -68,7 +68,7 @@ const update = (req, res) => {
 }
 
 // Delete specific user
-const remove = (req, res) => {
+const remove = (req, res, next) => {
     let user = req.profile
     user.remove((err, deletedUser) => {
         if (err) {
@@ -81,3 +81,5 @@ const remove = (req, res) => {
         res.json(deletedUser)
     })
 }
+
+export default { create, list, userByID, read, update, remove }
