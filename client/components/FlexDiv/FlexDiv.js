@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
+    background: ${props => props.background || 'transparent'};
     width: ${props => props.width || '100%'};
     height: ${props => props.height || 'auto'};
     display: flex;
@@ -10,6 +11,7 @@ const Container = styled.div`
     align-items: ${props => props.align || 'center'};
     margin: ${props => props.margin || '0 auto'};
     padding: ${props => props.padding || '0'};
+    border-bottom: ${props => props.borderBottom || 'none'};
 `
 
 const FlexDiv = ({ children, ...props }) => (

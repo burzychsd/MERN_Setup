@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Layout from './../containers/Layout'
 import FlexDiv from './../components/FlexDiv'
 
-class Home extends Component {
+class Users extends Component {
     render() {
         return (
             <Layout>
@@ -14,4 +14,4 @@ class Home extends Component {
     }
 }
 
-export default Home
+export default Users

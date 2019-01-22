@@ -2,20 +2,20 @@ import React from 'react'
 import styled from 'styled-components'
 import FlexDiv from './../FlexDiv'
 
-const Container = styled(FlexDiv)`
-    position: absolute;
-    bottom: 0;
-    background: #1E1E24;
-    height: 50px;
+const FooterDiv = styled.footer`
+  width: ${props => props.width || '100%'};
+  height: ${props => props.height || 'auto'};
+  position: ${props => props.position || 'absolute'};
+  bottom: 0px;
 `
 
-const Footer = ({ children }) => {
+const Footer = ({ children, ...props }) => {
   return (
-    <footer>
-      <Container>
+    <FooterDiv {...props.container}>
+      <FlexDiv {...props.containerFlex}>
         {children}
-      </Container>
-    </footer>
+      </FlexDiv>
+    </FooterDiv>
   )
 }
 

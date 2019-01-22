@@ -2,18 +2,20 @@ import React from 'react'
 import styled from 'styled-components'
 import FlexDiv from './../FlexDiv'
 
-const Container = styled(FlexDiv)`
-    background: rgba(52, 228, 234, 0.4);
-    height: 64px;
-    border-bottom: 3px solid rgba(128, 128, 128, 0.05)
+const NavDiv = styled.nav`
+  width: ${props => props.width || '100%'};
+  height: ${props => props.height || 'auto'};
+  position: ${props => props.position || 'absolute'};
+  top: 0px;
+  z-index: 999;
 `
 
-const Navigation = () => (
-    <nav>
-        <Container>
-            
-        </Container>
-    </nav>
+const Navigation = ({ children, ...props }) => (
+    <NavDiv {...props.container}>
+        <FlexDiv {...props.containerFlex}>
+            {children}
+        </FlexDiv>
+    </NavDiv>
 )
 
 export default Navigation
