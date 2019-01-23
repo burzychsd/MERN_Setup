@@ -1,8 +1,9 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 import shortid from 'shortid'
 import styled from 'styled-components'
 import FlexDiv from './../FlexDiv'
+import { delay } from './../../helpers/delayLink'
 
 const ListContainer = styled.ul`
     width: ${props => props.width || 'auto'};
@@ -10,9 +11,9 @@ const ListContainer = styled.ul`
     margin: ${props => props.margin || '0px'};
     padding: ${props => props.padding || '0px'};
 
-    @media (max-width: 767px) {
+    ${props => props.sidebar || `@media (max-width: 767px) {
         display: none;
-    }
+    }`}
 `
 const ListItem = styled.li`
     font-family: ${props => props.fontFamily || 'inherit'};
@@ -33,8 +34,10 @@ const ListItem = styled.li`
 
 const NavList = (props) => {
 
+  const { pathname } = props.location
+
   const items = props.listItems.map(item => 
-    <ListItem key={shortid.generate()} {...props.listItem}><NavLink to={`/${item.replace(/\s/g, '')}`} activeStyle={{ color: 'white' }}>{item.toUpperCase()}</NavLink></ListItem>
+    <ListItem onClick={props.clicked} key={shortid.generate()} {...props.listItem}><NavLink to={pathname} onClick={(e) => delay(e, `/${item.replace(/\s/g, '')}`, props.history)} activeStyle={{ color: `${pathname === `/${item.replace(/\s/g, '')}` ? '#FFF8F0' : 'inherit'}` }}>{item.toUpperCase()}</NavLink></ListItem>
   )
 
   return (
@@ -46,4 +49,4 @@ const NavList = (props) => {
   )
 }
 
-export default NavList
+export default withRouter(NavList)

@@ -1,13 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import FlexDiv from './../FlexDiv'
+import { delay } from './../../helpers/delayLink'
 
 const Logo = (props) => {
+
   return (
       <FlexDiv {...props.styles}>
-        <Link to='/'><img width={props.styles.width} src={props.url} alt='logo' /></Link>
+        <img onClick={(e) => delay(e, '/', props.history)} width={props.styles.width} src={props.url} alt='logo' />
       </FlexDiv>
   )
 }
 
-export default Logo
+export default withRouter(Logo)

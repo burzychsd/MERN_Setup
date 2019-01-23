@@ -5,13 +5,23 @@ import NavList from './../../components/NavList'
 import Footer from './../../components/Footer'
 import Logo from './../../components/Logo'
 import Hamburger from './../../components/Hamburger'
+import Title from './../../components/Title'
+import Credits from './../../components/Credits'
+import Sidebar from './../../components/Sidebar'
 import { logoStyles,
     navListStyles,
     navStyles,
     hamburgerStyles,
-    footerStyles } from './styles'
+    footerStyles,
+    titleStyles,
+    creditsStyles,
+    sidebarStyles } from './styles'
 
 const GlobalStyle = createGlobalStyle`
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
     html {
         min-height: 100%;
         min-width: 200px;
@@ -37,8 +47,9 @@ const GlobalStyle = createGlobalStyle`
         flex-flow: column nowrap;
     }
 
-    .link_active {
-        color: '#FFF8F0'
+    .sidebar_active {
+        transform: translateX(0);
+        transition: all 0.4s ease;
     }
 `
 
@@ -48,7 +59,14 @@ class Layout extends Component {
         openNav: false
     }
 
+    sidebar = React.createRef()
+
     handleNavigation = () => this.setState((state) => ({ openNav: !state.openNav }))
+    componentDidUpdate = (prevProps, prevState) => {
+        if(prevState.openNav !== this.state.openNav) {
+            this.sidebar.current.classList.toggle('sidebar_active')
+        }
+    }
 
     render() {
         const { openNav } = this.state
@@ -63,9 +81,13 @@ class Layout extends Component {
                     </Navigation>
                 </header>
                 <main style={{ paddingTop: `${navStyles.container.height}` }}>
+                    <Sidebar innerRef={this.sidebar} clicked={this.handleNavigation} {...sidebarStyles} />
                     {this.props.children}
                 </main>
-                <Footer {...footerStyles} />
+                <Footer {...footerStyles}>
+                    <Title {...titleStyles} title='MERNStack' />
+                    <Credits {...creditsStyles} credits='&copy; 2019 Sebastian Burzych' />
+                </Footer>
             </Fragment>
         )
     }

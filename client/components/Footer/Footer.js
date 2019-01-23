@@ -7,6 +7,7 @@ const FooterDiv = styled.footer`
   height: ${props => props.height || 'auto'};
   position: ${props => props.position || 'absolute'};
   bottom: 0px;
+  z-index: 1000;
 `
 
 const Footer = ({ children, ...props }) => {

@@ -16,25 +16,23 @@ const footerStyles = {
     },
     containerFlex: {
         background: '#1E1E24',
-        height: '100%'
+        height: '100%',
+        justify: 'space-between'
     }
 }
 
 const navStyles = {
     container: {
-        height: '64px'
-    },
-    containerFlex: {
-        background: 'rgba(52, 228, 234, 0.4)',
         height: '64px',
+        background: 'rgb(80, 247, 253)',
         borderBottom: '3px solid rgba(128, 128, 128, 0.05)',
-        justify: 'space-between',
+        justify: 'space-between'
     }
 }
 
 const navListStyles = {
     container: {
-        margin: '0 2em 0 1em',
+        margin: '0 2rem 0 1rem',
         width: '300px'
     },
     containerFlex: {
@@ -59,11 +57,59 @@ const hamburgerStyles = {
         width: '35px',
         height: '25px',
         flow: 'column nowrap',
-        margin: '0 2em 0 1em'
+        margin: '0 2rem 0 1rem'
     },
     bar: {
         width: '35px',
         height: '3px'
+    }
+}
+
+const titleStyles = {
+    fontWeight: 700,
+    size: '22px',
+    color: '#FFF8F0',
+    margin: '0 1rem 0 2rem'
+}
+
+const creditsStyles = {
+    fontWeight: 700,
+    size: '12px',
+    color: '#FFF8F0',
+    margin: '0 2rem 0 1rem'
+}
+
+const sidebarStyles = {
+    navStyles: {
+        container: {
+            position: 'fixed',
+            width: '200px',
+            height: '100vh',
+            bottom: '0px',
+            right: '0px',
+            justify: 'center',
+            background: '#D6EDFF',
+            translate: 'translateY(-100%)',
+            zIndex: 999
+        }
+    },
+    navListStyles: {
+        container: {
+            width: '65%',
+            height: '50%',
+            sidebar: 'display: inherit;'
+        },
+        containerFlex: {
+            flow: 'column nowrap',
+            justify: 'space-around'
+        },
+        listItems: navListStyles.listItems,
+        listItem: {
+            ...navListStyles.listItem
+        },
+        activeItem: {
+            ...navListStyles.activeItem
+        }
     }
 }
 
@@ -72,5 +118,8 @@ export {
     navListStyles,
     navStyles,
     hamburgerStyles,
-    footerStyles
+    footerStyles,
+    titleStyles,
+    creditsStyles,
+    sidebarStyles
 }
