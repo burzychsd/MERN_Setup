@@ -1,5 +1,6 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
+import Layout from './containers/Layout'
 import Home from './pages/Home'
 import Users from './pages/Users'
 import SignIn from './pages/SignIn'
@@ -9,14 +10,14 @@ class MainRouter extends Component {
 
     render() {
         return (
-            <Fragment>
+            <Layout>
                 <Switch>
                     <Route exact path='/' component={Home} />
                     <Route path='/users' component={Users} />
                     <Route path='/signin' component={SignIn} />
                     <Route path='/signup' component={SignUp} />
                 </Switch>
-            </Fragment>
+            </Layout>
         )
     }
 }

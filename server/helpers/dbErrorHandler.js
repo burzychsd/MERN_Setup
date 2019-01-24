@@ -1,3 +1,14 @@
+const getUniqueErrorMessage = (err) => {
+    let output
+    try {
+        let fieldName = err.message.substring(err.message.lastIndexOf('_1'), err.message.lastIndexOf('index:') + 7)
+        output = fieldName.charAt(0).toUpperCase() + fieldName.slice(1) + ' already exists'
+    } catch (ex) {
+        output = 'Unique field already exists'
+    }
+    return output
+}
+
 const getErrorMessage = (err) => {
     let message = ''
     if (err.code) {
@@ -16,18 +27,8 @@ const getErrorMessage = (err) => {
             }
         }
     }
-}
 
-const getUniqueErrorMessage = (err) => {
-    let output
-    try {
-        let fieldName = err.message.substring(err.message.lastIndexOf('.$') + 2, 
-        err.message.lasIndexOf('_1'))
-        output = fieldName.charAt(0).toUpperCase() + fieldName.slice(1) + ' alreadt exists'
-    } catch (ex) {
-        output = 'Unique field already exists'
-    }
-    return output
+    return message
 }
 
 export default { getErrorMessage }
