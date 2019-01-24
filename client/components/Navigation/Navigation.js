@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import FlexDiv from './../FlexDiv'
 
 const NavDiv = styled.nav`
   display: flex;
@@ -11,13 +10,13 @@ const NavDiv = styled.nav`
   height: ${props => props.height || 'auto'};
   position: ${props => props.position || 'absolute'};
   top: ${props => props.top || '0px'};
-  bottom: ${props => props.bottom || 'inherit'};
-  right: ${props => props.right || 'inherit'};
-  left: ${props => props.left || 'inherit'};
+  bottom: ${props => props.bottom || null};
+  right: ${props => props.right || null};
+  left: ${props => props.left || null};
   background: ${props => props.background || 'transparent'};
   z-index: ${props => props.zIndex || 1000};
-  transform: ${props => props.translate || 'translate(0, 0)'};
-  transition: ${props => props.transition || 'all 0.4s ease'}
+  transform: ${props => props.translate || 'translateY(0)'};
+  transition: ${props => props.transition || 'all 0.4s ease'};
 `
 
 const Navigation = ({ children, ...props }) => (

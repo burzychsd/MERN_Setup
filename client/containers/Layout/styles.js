@@ -1,12 +1,13 @@
 import logo from './../../assets/images/logo.svg'
 
 const logoStyles = {
-    styles: {
+    container: {
         width: '45px',
         height: '45px',
         padding: '1em 0.5em 0.5em 0.5em',
         margin: '0 1em 0 2em'
     },
+    width: '45px',
     url: `${logo}`
 }
 
@@ -33,9 +34,7 @@ const navStyles = {
 const navListStyles = {
     container: {
         margin: '0 2rem 0 1rem',
-        width: '300px'
-    },
-    containerFlex: {
+        width: '300px',
         justify: 'space-between',
         height: '100%'
     },
@@ -52,11 +51,10 @@ const navListStyles = {
 }
 
 const hamburgerStyles = {
-    containerFlex: {
+    container: {
         justify: 'space-between',
         width: '35px',
         height: '25px',
-        flow: 'column nowrap',
         margin: '0 2rem 0 1rem'
     },
     bar: {
@@ -84,7 +82,8 @@ const sidebarStyles = {
         container: {
             position: 'fixed',
             width: '200px',
-            height: '100vh',
+            height: 'calc(100% - 114px)',
+            top: `${navStyles.container.height}`,
             bottom: '0px',
             right: '0px',
             justify: 'center',
@@ -95,13 +94,10 @@ const sidebarStyles = {
     },
     navListStyles: {
         container: {
-            width: '65%',
-            height: '50%',
-            sidebar: 'display: inherit;'
-        },
-        containerFlex: {
+            width: '100%',
+            height: '100%',
             flow: 'column nowrap',
-            justify: 'space-around'
+            sidebar: `display: inherit`
         },
         listItems: navListStyles.listItems,
         listItem: {

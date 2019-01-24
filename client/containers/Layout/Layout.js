@@ -47,41 +47,44 @@ const GlobalStyle = createGlobalStyle`
         flex-flow: column nowrap;
     }
 
-    .sidebar_active {
-        transform: translateX(0);
+    .nav_active {
+        transform: translateY(0);
         transition: all 0.4s ease;
     }
 `
 
 class Layout extends Component {
 
+
     state = {
-        openNav: false
+        openNav: false,
     }
 
     sidebar = React.createRef()
+    hamburger = React.createRef()
 
-    handleNavigation = () => this.setState((state) => ({ openNav: !state.openNav }))
     componentDidUpdate = (prevProps, prevState) => {
-        if(prevState.openNav !== this.state.openNav) {
-            this.sidebar.current.classList.toggle('sidebar_active')
+        if (prevState.openNav !== this.state.openNav) {
+            this.sidebar.current.classList.toggle('nav_active')
         }
     }
+    handleNavigation = () => this.hamburger.current ? this.setState((state) => ({ openNav: !state.openNav })) : null
+    handleHomeLogo = () => this.state.openNav ? this.setState((state) => ({ openNav: !state.openNav })) : null
 
     render() {
-        const { openNav } = this.state
+        const { width } = this.state
         return (
             <Fragment>
                 <GlobalStyle />
                 <header>
                     <Navigation {...navStyles}>
-                        <Logo {...logoStyles} />
+                        <Logo {...logoStyles} clicked={this.handleHomeLogo} />
                         <NavList {...navListStyles} />
-                        <Hamburger {...hamburgerStyles} clicked={this.handleNavigation} />
+                        <Hamburger innerRef={this.hamburger} {...hamburgerStyles} clicked={this.handleNavigation} />
                     </Navigation>
+                    <Sidebar innerRef={this.sidebar} clicked={this.handleNavigation} {...sidebarStyles} />
                 </header>
                 <main style={{ paddingTop: `${navStyles.container.height}` }}>
-                    <Sidebar innerRef={this.sidebar} clicked={this.handleNavigation} {...sidebarStyles} />
                     {this.props.children}
                 </main>
                 <Footer {...footerStyles}>

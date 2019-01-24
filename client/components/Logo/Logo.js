@@ -1,14 +1,22 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-import FlexDiv from './../FlexDiv'
+import styled from 'styled-components'
 import { delay } from './../../helpers/delayLink'
 
 const Logo = (props) => {
 
+  const Container = styled.div`
+    width: ${props => props.width || 'auto'};
+    height: ${props => props.height || 'auto'};
+    padding: ${props => props.padding || '0px'};
+    margin: ${props => props.margin || '0px'};
+    cursor: pointer;
+  `
+
   return (
-      <FlexDiv {...props.styles}>
-        <img onClick={(e) => delay(e, '/', props.history)} width={props.styles.width} src={props.url} alt='logo' />
-      </FlexDiv>
+    <Container {...props.container} onClick={props.clicked}>
+      <img onClick={(e) => delay(e, '/', props.history)} width={props.width} src={props.url} alt='logo' />
+    </Container>
   )
 }
 

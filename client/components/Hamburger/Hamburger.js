@@ -1,9 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import FlexDiv from './../FlexDiv'
 import bar from './../../assets/images/bar.svg'
 
-const Container = styled(FlexDiv)`
+const Container = styled.div`
+    width: ${props => props.width || 'auto'};
+    height: ${props => props.height || 'auto'};
+    display: flex;
+    flex-flow: ${props => props.flow || 'column nowrap'};
+    justify-content: ${props => props.justify || 'space-between'};
+    align-items: ${props => props.align || 'center'};
+    margin: ${props => props.margin || '0px'};
     cursor: pointer;
 
     @media (min-width: 768px) {
@@ -16,7 +22,7 @@ const Bar = styled.img`
 `
 
 const Hamburger = (props) => (
-    <Container {...props.containerFlex} onClick={props.clicked}>
+    <Container ref={props.innerRef} {...props.container} onClick={props.clicked}>
         <Bar {...props.bar} src={bar} alt='bar' />
         <Bar {...props.bar} src={bar} alt='bar' />
         <Bar {...props.bar} src={bar} alt='bar' />

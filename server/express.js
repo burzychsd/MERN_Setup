@@ -61,9 +61,10 @@ app.get('*', (req, res) => {
      if (context.url) {
        return res.redirect(303, context.url)
      }
+     const styles = sheet.getStyleTags()
      res.status(200).send(template({
        markup: markup,
-       css: sheet.getStyleTags()
+       css: styles
      }))
  })
 
