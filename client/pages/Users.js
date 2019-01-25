@@ -1,12 +1,11 @@
-import React, { Component } from 'react'
-import FlexDiv from './../components/FlexDiv'
+import React, { Component, Fragment } from 'react'
 
 class Users extends Component {
     render() {
         return (
-            <FlexDiv>
+            <Fragment>
                     
-            </FlexDiv>
+            </Fragment>
         )
     }
 }

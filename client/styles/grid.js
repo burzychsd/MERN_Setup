@@ -52,13 +52,13 @@ export const gridAlignSelf = (val) => val ? `align-self: ${val}` : null
 // UNIVERSAL GRID STYLES
 export const gridStyles = (props={}) => css`
     ${gridDisplay};
-    ${props => grid(props.grid)};
-    ${props => gridGap(props.gridGap)};
-    ${props => gridJustifyItems(props.gridJustifyItems)};
-    ${props => gridAlignItems(props.gridAlignItems)};
-    ${props => gridJustifyContent(props.gridJustifyContent)};
-    ${props => gridAlignContent(props.gridAlignContent)};
-    ${props => gridAutoColumns(props.gridAutoColumns)};
-    ${props => gridAutoRows(props.gridAutoRows)};
-    ${props => gridAutoFlow(props.gridAutoFlow)};
+    ${grid(props.grid)};
+    ${gridGap(props.gridGap)};
+    ${gridJustifyItems(props.gridJustifyItems)};
+    ${gridAlignItems(props.gridAlignItems)};
+    ${gridJustifyContent(props.gridJustifyContent)};
+    ${gridAlignContent(props.gridAlignContent)};
+    ${gridAutoColumns(props.gridAutoColumns)};
+    ${gridAutoRows(props.gridAutoRows)};
+    ${gridAutoFlow(props.gridAutoFlow)};
 `

@@ -43,15 +43,15 @@ export const alignSelf = (align) => align ? `align-self: ${align}` : null
 // UNIVERSAL FLEX STYLES
 export const flexStyles = (props={}) => css`
     ${flexDisplay};
-    ${props => flexFlow(props.flow)};
-    ${props => justifyContent(props.justifyContent)};
-    ${props => justifySelf(props.justifySelf)};
-    ${props => alignContent(props.alignContent)};
-    ${props => alignItems(props.alignItems)};
-    ${props => alignSelf(props.alignSelf)};
-    ${props => flexGrow(props.flexGrow)};
-    ${props => flexShrink(props.flexShrink)};
-    ${props => flexBasis(props.flexBasis)};
-    ${props => order(props.order)};
-    ${props => flex(props.flex)};
+    ${flexFlow(props.flow)};
+    ${justifyContent(props.justifyContent)};
+    ${justifySelf(props.justifySelf)};
+    ${alignContent(props.alignContent)};
+    ${alignItems(props.alignItems)};
+    ${alignSelf(props.alignSelf)};
+    ${flexGrow(props.flexGrow)};
+    ${flexShrink(props.flexShrink)};
+    ${flexBasis(props.flexBasis)};
+    ${order(props.order)};
+    ${flex(props.flex)};
 `

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Layout from './containers/Layout'
+import Layout from './template/Layout'
 import Home from './pages/Home'
 import Users from './pages/Users'
 import SignIn from './pages/SignIn'
