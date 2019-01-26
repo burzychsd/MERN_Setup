@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import styled from 'styled-components'
 
 // =================
 // CSS GRID
@@ -8,57 +8,57 @@ import { css } from 'styled-components'
 const gridDisplay = 'display: grid'
 
 // GRID TEMPLATE SHORTHAND
-const grid = (values) => values ? `grid: ${values}` : null
+const grid = (values='') => `grid: ${values}`
 
 // GRID GAP SHORTHAND
-const gridGap = (values) => values ? `grid-gap: ${values}` : null
+const gridGap = (values='') => `grid-gap: ${values}`
 
 // GRID JUSTIFY ITEMS (ROW AXIS)
-const gridJustifyItems = (val) => val ? `justify-items: ${val}` : null
+const gridJustifyItems = (val='') => `justify-items: ${val}`
 
 // GRID ALIGN ITEMS (BLOCK AXIS)
-const gridAlignItems = (val) => val ? `align-items: ${val}` : null
+const gridAlignItems = (val='') => `align-items: ${val}`
 
 // GRID JUSTIFY CONTENT
-const gridJustifyContent = (val) => val ? `justify-content: ${val}` : null
+const gridJustifyContent = (val='') => `justify-content: ${val}`
 
 // GRID ALIGN CONTENT
-const gridAlignContent = (val) => val ? `align-content: ${val}` : null
+const gridAlignContent = (val='') => `align-content: ${val}`
 
 // GRID AUTO COLUMNS
-const gridAutoColumns = (val) => val ? `grid-auto-columns: ${val}` : null
+const gridAutoColumns = (val='') => `grid-auto-columns: ${val}`
 
 // GRID AUTO ROWS
-const gridAutoRows = (val) => val ? `grid-auto-rows: ${val}` : null
+const gridAutoRows = (val='') => `grid-auto-rows: ${val}`
 
 // GRID AUTO FLOW
-const gridAutoFlow = (val) => val ? `grid-auto-flow: ${val}` : null
+const gridAutoFlow = (val='') => `grid-auto-flow: ${val}`
 
 // GRID COLUMN START + END
-const gridColumn = (values) => values ? `grid-column: ${values}` : null
+export const gridColumn = (values='') => `grid-column: ${values}`
 
 // GRID ROW START + END
-const gridRow = (values) => values ? `grid-row: ${values}` : null
+export const gridRow = (values='') => `grid-row: ${values}`
 
 // GRID AREA
-const gridArea = (val) => val ? `grid-area: ${val}` : null
+export const gridArea = (val='') => `grid-area: ${val}`
 
 // GRID JUSTIFY SELF
-const gridJustifySelf = (val) => val ? `justify-self: ${val}` : null
+export const gridJustifySelf = (val='') => `justify-self: ${val}`
 
 // GRID ALIGN SELF
-const gridAlignSelf = (val) => val ? `align-self: ${val}` : null
+export const gridAlignSelf = (val='') => `align-self: ${val}`
 
 // UNIVERSAL GRID STYLES
-export const styles = (props={}) => css`
-    ${gridDisplay};
-    ${grid(props.grid)};
-    ${gridGap(props.gridGap)};
-    ${gridJustifyItems(props.gridJustifyItems)};
-    ${gridAlignItems(props.gridAlignItems)};
-    ${gridJustifyContent(props.gridJustifyContent)};
-    ${gridAlignContent(props.gridAlignContent)};
-    ${gridAutoColumns(props.gridAutoColumns)};
-    ${gridAutoRows(props.gridAutoRows)};
-    ${gridAutoFlow(props.gridAutoFlow)};
+export const Grid = styled.div`
+    ${props => props.display ? gridDisplay : null};
+    ${props => props ? grid(props.grid) : null};
+    ${props => props ? gridGap(props.gap) : null};
+    ${props => props ? gridJustifyItems(props.justifyItems) : null};
+    ${props => props ? gridAlignItems(props.alignItems) : null};
+    ${props => props ? gridJustifyContent(props.justifyContent) : null};
+    ${props => props ? gridAlignContent(props.alignContent) : null};
+    ${props => props ? gridAutoColumns(props.autoColumns) : null};
+    ${props => props ? gridAutoRows(props.autoRows) : null};
+    ${props => props ? gridAutoFlow(props.autoFlow) : null};
 `

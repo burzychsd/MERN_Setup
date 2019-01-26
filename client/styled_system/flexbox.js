@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import styled from 'styled-components'
 
 // =================
 // FLEXBOX
@@ -8,50 +8,50 @@ import { css } from 'styled-components'
 const flexDisplay = 'display: flex'
 
 // FLEX SHORTHAND
-const flex  = (values) => values ? `flex: ${values}` : null
+const flex  = (values='') => `flex: ${values}`
 
 // FLEX DIRECTION AND WRAP
-const flexFlow = (flow) => flow ? `flex-flow: ${flow}` : null
+const flexFlow = (flow='') => `flex-flow: ${flow}`
 
 // DISPLAY ORDER
-const order = (val) => val ? `order: ${val}` : null
+const order = (val='') => `order: ${val}`
 
 // FLEX GROW
-const flexGrow = (grow) => grow ? `flex-grow: ${grow}` : null
+const flexGrow = (grow='') => `flex-grow: ${grow}`
 
 // FLEX SHRINK
-const flexShrink = (shrink) => shrink ? `flex-shrink: ${shrink}` : null
+const flexShrink = (shrink='') => `flex-shrink: ${shrink}`
 
 // FLEX BASIS
-const flexBasis = (width) => width ? `flex-basis: ${width}` : null
+const flexBasis = (width='') => `flex-basis: ${width}`
 
 // AXIS ALIGNMENT (JUSTIFY CONTAINERS)
-const justifyContent = (justify) => justify ? `justify-content: ${justify}` : null
+const justifyContent = (justify='') => `justify-content: ${justify}`
 
 // AXIS ALIGNMENT (JUSTIFY ITEM)
-const justifySelf = (justify) => justify ? `justify-self: ${justify}` : null
+const justifySelf = (justify='') => `justify-self: ${justify}`
 
 // PACKING FLEX LINES
-const alignContent = (align) => align ? `align-content: ${align}` : null
+const alignContent = (align='') => `align-content: ${align}`
 
 // CROSS-AXIS ALIGNMENT (ALIGN CONTAINERS)
-const alignItems = (align) => align ? `align-items: ${align}` : null
+const alignItems = (align='') => `align-items: ${align}`
 
 // CROSS-AXIS ALIGNMENT (ALIGN ITEMS)
-const alignSelf = (align) => align ? `align-self: ${align}` : null
+const alignSelf = (align='') => `align-self: ${align}`
 
 // UNIVERSAL FLEX STYLES
-export const styles = (props={}) => css`
-    ${flexDisplay};
-    ${flexFlow(props.flow)};
-    ${justifyContent(props.justifyContent)};
-    ${justifySelf(props.justifySelf)};
-    ${alignContent(props.alignContent)};
-    ${alignItems(props.alignItems)};
-    ${alignSelf(props.alignSelf)};
-    ${flexGrow(props.flexGrow)};
-    ${flexShrink(props.flexShrink)};
-    ${flexBasis(props.flexBasis)};
-    ${order(props.order)};
-    ${flex(props.flex)};
+export const Flex = styled.div`
+    ${props => props.display ? flexDisplay : null};
+    ${props => props ? flexFlow(props.flow) : null};
+    ${props => props ? justifyContent(props.justifyContent) : null};
+    ${props => props ? justifySelf(props.justifySelf) : null};
+    ${props => props ? alignContent(props.alignContent) : null};
+    ${props => props ? alignItems(props.alignItems) : null};
+    ${props => props ? alignSelf(props.alignSelf) : null};
+    ${props => props ? flexGrow(props.flexGrow) : null};
+    ${props => props ? flexShrink(props.flexShrink) : null};
+    ${props => props ? flexBasis(props.flexBasis) : null};
+    ${props => props ? order(props.order) : null};
+    ${props => props ? flex(props.flex) : null};
 `
