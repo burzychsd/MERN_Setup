@@ -1,20 +1,18 @@
 import React, { Component, Fragment } from 'react'
 import { Normalize } from 'styled-normalize'
-import { GlobalStyleSheet } from './../../styles/global'
-import Navigation from './../../organisms/Navigation'
+import { global as Global } from './../../styled_system'
 
 
 class Layout extends Component {
 
     render() {
+        const { children } = this.props
+
         return (
             <Fragment>
                 <Normalize />
-                <GlobalStyleSheet />
-                    <header>
-                        <Navigation placement={{ position: 'absolute', top: '0px' }} 
-                        data={{ listItems: ['Users', 'Sign up', 'Sign In'] }} />
-                    </header>
+                <Global.styles />
+                {children}
             </Fragment>
         )
     }
