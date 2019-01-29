@@ -51,7 +51,7 @@ export const gridAlignSelf = (val='') => `align-self: ${val}`
 
 // UNIVERSAL GRID STYLES
 export const Grid = styled.div`
-    ${props => props.display ? gridDisplay : null};
+    ${gridDisplay};
     ${props => props ? grid(props.grid) : null};
     ${props => props ? gridGap(props.gap) : null};
     ${props => props ? gridJustifyItems(props.justifyItems) : null};

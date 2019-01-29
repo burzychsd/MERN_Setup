@@ -13,6 +13,9 @@
       [
         "babel-plugin-styled-components",
         {
+          "ssr": true,
+          "pure": true,
+          "minify": false,
           "displayName": true
         }
       ],

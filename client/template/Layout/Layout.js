@@ -7,8 +7,12 @@ const Layout = ({ children }) => (
     <Fragment>
         <Global.styles />
         <Normalize />
-        <Navigation />
-        {children}
+        <header>
+            <Navigation />
+        </header>
+        <main>
+            {children}
+        </main>
     </Fragment>
 )
 

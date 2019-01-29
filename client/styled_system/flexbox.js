@@ -42,7 +42,7 @@ const alignSelf = (align='') => `align-self: ${align}`
 
 // UNIVERSAL FLEX STYLES
 export const Flex = styled.div`
-    ${props => props.display ? flexDisplay : null};
+    ${flexDisplay};
     ${props => props ? flexFlow(props.flow) : null};
     ${props => props ? justifyContent(props.justifyContent) : null};
     ${props => props ? justifySelf(props.justifySelf) : null};
