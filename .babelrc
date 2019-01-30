@@ -15,7 +15,7 @@
         {
           "ssr": true,
           "pure": true,
-          "minify": false,
+          "minify": true,
           "displayName": true
         }
       ],

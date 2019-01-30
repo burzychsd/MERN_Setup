@@ -17,3 +17,6 @@ export const textLg = (size, ratio) => `calc(${size} * ${ratio ? ratio : scaleRa
 export const textXl = (size, ratio) => `calc(${size} * ${ratio ? ratio : scaleRatio} * ${ratio ? ratio : scaleRatio} * ${ratio ? ratio : scaleRatio})`
 export const textXxl = (size, ratio) => `calc(${size} * ${ratio ? ratio : scaleRatio} * ${ratio ? ratio : scaleRatio} * ${ratio ? ratio : scaleRatio} * ${ratio ? ratio : scaleRatio})`
 export const textXxxl = (size, ratio) => `calc(${size} * ${ratio ? ratio : scaleRatio} * ${ratio ? ratio : scaleRatio} * ${ratio ? ratio : scaleRatio} * ${ratio ? ratio : scaleRatio} * ${ratio ? ratio : scaleRatio})`
+
+// FLUID TYPOGRAPHY
+export const fluid = (min, max, vmin, vmax) => `calc(${min}px + (${max} - ${min}) * ((100vw - ${vmin}px) / (${vmax} - ${vmin})))`

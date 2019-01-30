@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 
 const NavigationLink = ({ link, activeClass }) => (
@@ -8,5 +9,10 @@ const NavigationLink = ({ link, activeClass }) => (
         {link.toUpperCase()}
     </NavLink>
 )
+
+NavigationLink.propTypes = {
+    link: PropTypes.string,
+    activeClass: PropTypes.object
+}
 
 export default NavigationLink
