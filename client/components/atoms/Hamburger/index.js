@@ -33,7 +33,6 @@ Hamburger.defaultProps = {
             flex-flow: column nowrap;
             justify-content: space-between;
             align-items: center;
-            margin: 0 1em 0 0;
             cursor: pointer;
 
             @media (min-width: ${breakpoints.Sm}px) {

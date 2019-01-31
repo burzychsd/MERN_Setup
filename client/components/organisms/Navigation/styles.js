@@ -9,7 +9,8 @@ export const styles = {
             height: 64px;
             position: absolute;
             background: ${colors.Accent};
-            justify-content: flex-end;
+            justify-content: space-between;
+            padding: 0 1.5em;
             align-items: center;
             z-index: 999;
         `
@@ -36,12 +37,10 @@ export const styles = {
     ul: {
         as: 'ul',
         styles: css`
-            width: 400px;
+            width: 380px;
             height: 100%;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
-            margin: 0 1em 0 0;
-            padding: 0.5em;
             list-style: none;
 
             @media (max-width: ${breakpoints.Sm - 1}px) {
@@ -103,5 +102,15 @@ export const styles = {
                 
         //     `
         // }
+    },
+    logo: {
+        // path: '',
+        // name: '',
+        // img: {
+        //     styles: css`
+
+        //     `
+        // },
+        isNavigation: true
     }
 }

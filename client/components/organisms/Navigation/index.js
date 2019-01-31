@@ -4,6 +4,7 @@ import { Flex } from './../../../styled_system/flexbox'
 import { styles } from './styles'
 import NavigationLinks from './../../molecules/Navigation_links'
 import Hamburger from './../../atoms/Hamburger'
+import Image from './../../atoms/Image'
 
 const FlexBox = styled(Flex)`
     ${props => props.styles}
@@ -32,6 +33,7 @@ class Navigation extends Component {
         return (
             <Fragment>
                 <FlexBox {...styles.nav}>
+                    <Image {...styles.logo} />    
                     <FlexBox {...styles.ul}>
                         <NavigationLinks {...styles.links} />
                     </FlexBox>
