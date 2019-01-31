@@ -8,7 +8,10 @@ const Img = styled.img`
     ${props => props.styles}
 `
 const Image = ({ path, name, img, isNavigation }) => (
-    isNavigation ? <NavLink to='/'><Img src={path} alt={name} {...img} /></NavLink> : 
+    isNavigation ? 
+    <NavLink to='/' style={{ height: 'inherit' }}>
+        <Img src={path} alt={name} {...img} />
+    </NavLink> : 
     <Img src={path} alt={name} {...img} />
 )
 

@@ -23,10 +23,9 @@ export const styles = {
             right: 0px;
             background: ${colors.PrimaryDark};
             align-items: center;
-            padding: 64px 0 0 0;
+            padding: 64px 0 50px 0;
             transform: translateX(100%);
             transition: transform 0.4s ease-in-out;
-            overflow: auto;
             z-index: 998;
 
             @media (min-width: ${breakpoints.Sm}px) {
@@ -55,8 +54,9 @@ export const styles = {
             height: 100%;
             flex-flow: column nowrap;
             align-items: center;
+            overflow: auto;
 
-            @media (min-height: 320px) {
+            @media (min-height: 360px) {
                 justify-content: center;
             }
         `

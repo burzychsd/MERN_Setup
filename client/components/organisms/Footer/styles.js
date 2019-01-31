@@ -13,6 +13,7 @@ export const styles = {
             justify-content: space-between;
             align-items: center;
             padding: 0 1.5em;
+            z-index: 999;
         `
     },
     title: {
