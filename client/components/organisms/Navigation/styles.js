@@ -1,5 +1,6 @@
 import { css } from 'styled-components'
 import { colors, breakpoints, text } from './../../../styled_system'
+import { dropDownStyles } from './dropDown_styles'
 
 export const styles = {
     nav: {
@@ -12,7 +13,7 @@ export const styles = {
             justify-content: space-between;
             padding: 0 1.5em;
             align-items: center;
-            z-index: 999;
+            z-index: 1000;
         `
     },
     drawer: {
@@ -36,7 +37,7 @@ export const styles = {
     ul: {
         as: 'ul',
         styles: css`
-            width: 380px;
+            width: 480px;
             height: 100%;
             justify-content: space-between;
             align-items: center;
@@ -79,9 +80,13 @@ export const styles = {
         linkItem: {
             styles: css`
                 font-weight: 700;
-                font-size: ${text.fluid(18, 21, 320, 1199)};
+                font-size: ${text.fluid(16, 19, 320, 1199)};
                 color: ${colors.Accent};
                 margin: 1em 0;
+
+                @media (min-width: 1199px) {
+                    font-size: 19px;
+                }
             `
         },
         activeLink: {
@@ -112,5 +117,25 @@ export const styles = {
         //     `
         // },
         isNavigation: true
+    },
+    dropDown_components: [1],
+    dropDown0: {
+        dropDown: {
+            ...dropDownStyles,
+            dropDown_links: ['users']
+        }
+    },
+    dropDown1: {
+        dropDown: {
+            ...dropDownStyles,
+            dropDown_links: ['sign in']
+        }
+    },
+    dropDown2: {
+        dropDown: {
+            ...dropDownStyles,
+            dropDown_links: ['sign up']
+        }
     }
+
 }

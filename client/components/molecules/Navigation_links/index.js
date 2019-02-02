@@ -23,12 +23,22 @@ const NavigationLinks = ({ items, linkItem, activeLink }) => {
     )
 }
 
+NavigationLinks.propTypes = {
+    items: PropTypes.array,
+    linkItem: PropTypes.object,
+    activeLink: PropTypes.object
+}
+
 NavigationLinks.defaultProps = {
     items: ['home', 'users', 'sign in', 'sign up'],
     linkItem: {
         styles: css`
             font-weight: 700;
-            font-size: ${text.fluid(16, 21, 320, 1199)};
+            font-size: ${text.fluid(16, 19, 320, 1199)};
+
+            @media (min-width: 1199px) {
+                font-size: 19px;
+            }
         `
     },
     activeLink: {
@@ -36,12 +46,6 @@ NavigationLinks.defaultProps = {
             color: `${colors.PrimaryLight}`
         }
     }
-}
-
-NavigationLinks.propTypes = {
-    items: PropTypes.array,
-    linkItem: PropTypes.object,
-    activeLink: PropTypes.object
 }
 
 export default NavigationLinks

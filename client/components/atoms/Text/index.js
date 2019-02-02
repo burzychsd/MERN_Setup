@@ -22,6 +22,10 @@ Text.defaultProps = {
             font-size: ${text.fluid(14, 18, 320, 1199)};
             line-height: ${text.bodyLineHeight};
             text-align: center;
+
+            @media (min-width: 1199px) {
+                font-size: 18px;
+            }
         `
     }
 }

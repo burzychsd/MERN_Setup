@@ -25,6 +25,10 @@ export const styles = {
                 font-weight: 700;
                 text-transform: uppercase;
                 margin: 0;
+
+                @media (min-width: 1199px) {
+                    font-size: 22px;
+                }
             `
         }
     },
@@ -35,6 +39,10 @@ export const styles = {
                 color: ${colors.LightGray};
                 font-size: ${text.fluid(10, 12, 320, 1199)};
                 text-align: center;
+
+                @media (min-width: 1199px) {
+                    font-size: 12px;
+                }
             `
         }
     }
