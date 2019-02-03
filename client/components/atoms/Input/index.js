@@ -34,7 +34,8 @@ Input.defaultProps = {
         `,
         type: 'text',
         name: '',
-        placeholder: 'Your text...'
+        placeholder: 'Your text...',
+        required: true
     }
 }
 

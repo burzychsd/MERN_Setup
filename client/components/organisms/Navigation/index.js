@@ -14,26 +14,12 @@ const FlexBox = styled(Flex)`
 
 class Navigation extends Component {
 
-    state = {
-        isOpen: false
-    }
-
-    drawer = React.createRef()
-
-    componentDidUpdate = (prevProps, prevState) => {
-
-        if (prevState.isOpen !== this.state.isOpen) {
-            this.handleDrawer()
-        }
-    }
+    state = {}
 
     handleOnClick = (e, stateKey) => this.setState((state) => ({ [stateKey]: !state[stateKey] }))
-    handleDrawer = (e) => this.handleElement(e, this.state.isOpen, this.drawer.current, 'transform', 'translateX(0)', 'translateX(100%)')
-
-    handleElement = (e, status, el, cssProp, value1, value2) => 
-    status ? el['style'][`${cssProp}`] = value1 : el['style'][`${cssProp}`] = value2
 
     render() {
+
         const dropDown_components = styles.dropDown_components ? 
         styles.dropDown_components.map((item, index) => {
             return (
@@ -53,18 +39,11 @@ class Navigation extends Component {
                         {dropDown_components}
                     </FlexBox>
                     {/* Mobile */}
-                    <Hamburger {...styles.hamburger} clicked={(e) => this.handleOnClick(e, 'isOpen')} />
-                </FlexBox>
-                {/* Mobile */}
-                <FlexBox {...styles.drawer} ref={this.drawer}>
-                    <FlexBox {...styles.ul_mobile}>
-                        <NavigationLinks {...styles.links_mobile} />
-                    </FlexBox>
+                    <Hamburger {...styles.hamburger} clicked={this.props.clicked} />
                 </FlexBox>
             </Fragment>
         )
     }
-
 }
 
 export default Navigation

@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react'
-import Input from './../components/atoms/Input'
+import Form from './../components/molecules/Form'
 
 class Home extends Component {
 
     render() {
         return (
             <Fragment>
-                
+                <Form />
             </Fragment>
         )
     }

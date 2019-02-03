@@ -10,8 +10,12 @@ export const styles = createGlobalStyle`
         margin: 0;
     }
 
+    html,
+    body {
+        height: 100vh;
+    }
+
     html {
-        height: 100%;
         background: ${colors.body};
     }
 
@@ -44,5 +48,11 @@ export const styles = createGlobalStyle`
     table {
         border-collapse: collapse;
         border-spacing: 0;
+    }
+
+    #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
 `

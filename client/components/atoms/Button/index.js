@@ -11,8 +11,8 @@ const Icon = styled.img`
     ${props => props.styles}
 `
 
-const Button = ({ button, withIcon, children }) => (
-    <Btn {...button}>
+const Button = ({ button, withIcon, clicked, children}) => (
+    <Btn {...button} onClick={clicked}>
         {withIcon.icon && <Icon src={withIcon.iconUrl} alt='btn-icon' styles={withIcon.styles} />}
         {children}
     </Btn>
@@ -20,7 +20,8 @@ const Button = ({ button, withIcon, children }) => (
 
 Button.propTypes = {
     button: PropTypes.object,
-    withIcon: PropTypes.object
+    withIcon: PropTypes.object,
+    clicked: PropTypes.func
 }
 
 Button.defaultProps = {
@@ -49,7 +50,7 @@ Button.defaultProps = {
         `
     },
     withIcon: {
-        icon: true,
+        icon: false,
         iconUrl: logo,
         styles: css`
             width: 14px;

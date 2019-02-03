@@ -7,13 +7,12 @@ export const styles = {
         styles: css`
             width: 100%;
             height: 50px;
-            position: absolute;
-            bottom: 0px;
             background: ${colors.Gray3};
             justify-content: space-between;
             align-items: center;
             padding: 0 1.5em;
             z-index: 999;
+            flex-shrink: 0;
         `
     },
     title: {
