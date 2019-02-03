@@ -4,6 +4,7 @@ import icon from './../../../assets/images/dropDown_icon.svg'
 
 export const dropDownStyles = {
     dropDown_container: {
+        as: 'ul',
         styles: css`
             flex-flow: column nowrap;
             align-items: center;

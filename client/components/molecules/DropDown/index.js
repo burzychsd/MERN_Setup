@@ -47,6 +47,7 @@ DropDown.defaultProps = {
     listItem: 'dropDown',
     dropDown: {
         dropDown_container: {
+            as: 'ul',
             styles: css`
                 flex-flow: column nowrap;
                 align-items: center;

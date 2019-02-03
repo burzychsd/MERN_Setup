@@ -37,7 +37,7 @@ export const styles = {
     ul: {
         as: 'ul',
         styles: css`
-            width: 480px;
+            width: 360px;
             height: 100%;
             justify-content: space-between;
             align-items: center;
@@ -118,24 +118,24 @@ export const styles = {
         // },
         isNavigation: true
     },
-    dropDown_components: [1],
-    dropDown0: {
-        dropDown: {
-            ...dropDownStyles,
-            dropDown_links: ['users']
-        }
-    },
-    dropDown1: {
-        dropDown: {
-            ...dropDownStyles,
-            dropDown_links: ['sign in']
-        }
-    },
-    dropDown2: {
-        dropDown: {
-            ...dropDownStyles,
-            dropDown_links: ['sign up']
-        }
-    }
+    // dropDown_components: [1, 2 ,3],
+    // dropDown0: {
+    //     dropDown: {
+    //         ...dropDownStyles,
+    //         dropDown_links: ['users']
+    //     }
+    // },
+    // dropDown1: {
+    //     dropDown: {
+    //         ...dropDownStyles,
+    //         dropDown_links: ['sign in']
+    //     }
+    // },
+    // dropDown2: {
+    //     dropDown: {
+    //         ...dropDownStyles,
+    //         dropDown_links: ['sign up']
+    //     }
+    // }
 
 }
