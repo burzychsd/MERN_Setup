@@ -16,7 +16,10 @@ class Navigation extends Component {
 
     state = {}
 
-    handleOnClick = (e, stateKey) => this.setState((state) => ({ [stateKey]: !state[stateKey] }))
+    handleOnClick = (e, stateKey) => {
+        Object.keys(this.state).forEach(key => key === stateKey ? null : this.setState({ [key]: false }))
+        this.setState((state) => ({ [stateKey]: !state[stateKey] }))
+    }
 
     render() {
 

@@ -21,7 +21,7 @@ const DropDown = ({ dropDown, listItem, clicked, status }) => {
 
     const links = dropDown.dropDown_links.map(link => 
         <LinkItem key={shortid.generate()} {...dropDown.dropDown_link}>
-            <NavigationLink link={link} {...dropDown.dropDown_activeLink} />
+            <NavigationLink link={link} {...dropDown.dropDown_activeLink} clicked={clicked} />
         </LinkItem>
     )
 
